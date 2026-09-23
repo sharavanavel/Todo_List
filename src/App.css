@@ -1,0 +1,319 @@
+/* App.css — global styles for the Personal Daily Task Manager.
+   Plain CSS on purpose: no frameworks, easy for beginners to read and tweak. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background-color: #f4f6fb;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* ---- Header ---- */
+.header {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+}
+
+.header-date {
+  margin-top: 0.4rem;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+/* ---- Task form ---- */
+.task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.task-form input:focus {
+  outline: 2px solid #2563eb;
+  border-color: transparent;
+}
+
+.task-form button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ---- Summary ---- */
+.task-summary {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* ---- Filters ---- */
+.task-filter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-filter button {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.task-filter button.active {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* ---- Task list & cards ---- */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.task-card-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.task-card input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.delete-button {
+  border: none;
+  background: none;
+  color: #ef4444;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
+.delete-button:hover {
+  color: #b91c1c;
+}
+
+.empty-message {
+  text-align: center;
+  color: #6b7280;
+  padding: 2rem 0;
+}
+
+/* ---- Optional date & time inputs in the form ---- */
+.task-form {
+  flex-direction: column;
+}
+
+.task-form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* ---- Task card extras ---- */
+.task-card {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+
+.task-card-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.edit-button,
+.email-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.2rem 0.4rem;
+}
+
+.task-due {
+  font-size: 0.85rem;
+  color: #2563eb;
+  padding-left: 1.7rem;
+}
+
+.task-card.completed .task-due {
+  color: #9ca3af;
+}
+
+.task-edit {
+  display: flex;
+  gap: 0.4rem;
+  padding-left: 1.7rem;
+}
+
+.task-edit input {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.task-edit button {
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+}
+
+.gmail-note {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ---- Description, badges and email status ---- */
+
+.task-description {
+  font-size: 0.85rem;
+  color: #4b5563;
+  padding-left: 1.7rem;
+  margin-top: 0.15rem;
+}
+
+.task-badges {
+  display: flex;
+  gap: 0.4rem;
+  padding-left: 1.7rem;
+  margin-top: 0.25rem;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.badge.priority-high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge.priority-normal {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge.priority-low {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge.category {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+.email-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #15803d;
+  padding-left: 1.7rem;
+  margin-top: 0.25rem;
+}
+
+/* Selects inside the form look like the other inputs */
+.task-form select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  width: 100%;
+}
